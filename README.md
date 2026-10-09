@@ -28,7 +28,7 @@ Edit `data.js` for experience, project details, links, and skills. About and blo
 - Searchable project list, selection, project detail routes, and GitHub actions.
 - Skills categories with keyboard navigation.
 - About profile, contact dialog, and résumé link.
-- Sound on by default, volume controls, reduced-motion setting, and persistent local preferences. Browsers that block autoplay begin music on the first interaction.
+- Sound on by default at 90% music volume, volume controls, reduced-motion setting, and persistent local preferences. Browsers that block autoplay begin music on the first interaction.
 - Uses only the exact `menu-music.mp3` from https://rayyanhai.dev/audio/menu-music.mp3 on repeat. Its source URL and SHA-256 are recorded in `public/music-source.json`. Options → Restart Song restarts the same track. Audio focus prevents two portfolio tabs from playing at once.
 - Browser Back/Forward and direct links to each page.
 

@@ -57,7 +57,7 @@ function render(){const path=location.pathname.replace(/\/$/,'')||'/';document.b
 // Sound starts on by default; a manual mute is saved on this device.
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
 const save=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));}catch{}};
-let volume=read('aw-volume',.3),motion=read('aw-motion',matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full'),muted=read('aw-muted',false);
+let volume=read('aw-volume-v2',.9),motion=read('aw-motion',matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full'),muted=read('aw-muted',false);
 const music=new Audio('/menu-music.mp3');music.loop=true;music.volume=volume;music.hidden=true;music.preload='metadata';music.dataset.soundtrack='reference-menu';document.body.append(music);
 let playAttempt=0,playPending=false;
 const audioFocus=typeof BroadcastChannel==='function'?new BroadcastChannel('adrian-portfolio-music'):null;
@@ -82,7 +82,7 @@ settings.addEventListener('close',()=>document.querySelector('#options').setAttr
 function openContact(){const d=document.querySelector('#contact');d.innerHTML=`<h2 id="contact-title">Let’s connect</h2><div class="contact-email">${profile.email}</div><div class="contact-links"><a class="mc-button" href="mailto:${profile.email}">Send an email</a>${external(profile.linkedin,'LinkedIn')}${external(profile.github,'GitHub')}</div><button class="mc-button done" data-close>Done</button>`;d.showModal();}
 document.addEventListener('input',e=>{
   if(e.target.matches('.search')){query=e.target.value;selected=null;document.querySelector('.project-list').innerHTML=projectRows();updateProjectActions();}
-  if(e.target.id==='volume'){volume=Number(e.target.value);music.volume=volume;save('aw-volume',volume);document.querySelector('#volume-label').textContent=`Music Volume: ${Math.round(volume*100)}%`;}
+  if(e.target.id==='volume'){volume=Number(e.target.value);music.volume=volume;save('aw-volume-v2',volume);document.querySelector('#volume-label').textContent=`Music Volume: ${Math.round(volume*100)}%`;}
 });
 function chooseCategory(i){activeCategory=i;document.querySelectorAll('[data-category]').forEach(b=>{const active=Number(b.dataset.category)===i;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});const panel=document.querySelector('#skill-panel');panel.innerHTML=skillContent();panel.setAttribute('aria-labelledby',`category-${i}`);}
 document.addEventListener('keydown',e=>{if(e.target.matches('[data-category]')&&['ArrowDown','ArrowUp','ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const i=e.key==='Home'?0:e.key==='End'?categories.length-1:(activeCategory+(['ArrowDown','ArrowRight'].includes(e.key)?1:-1)+categories.length)%categories.length;chooseCategory(i);document.querySelector(`#category-${i}`).focus();}});
