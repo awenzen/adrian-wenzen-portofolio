@@ -1,0 +1,9 @@
+node_modules/
+dist/
+tmp/
+output/
+.DS_Store
+public/creative1.mp3
+public/hal2.mp3
+public/menu1.mp3
+public/minecraft-original.ogg
