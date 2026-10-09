@@ -15,8 +15,8 @@ export const experience = [
   { date:'May 2026 – Aug 2026', location:'Jakarta, Indonesia', role:'Software Engineer Intern', company:'TransIndonesia Network', bullets:[
     'Built an internal provisioning portal for enterprise connectivity requests, from customer intake and feasibility review through installation, activation, and billing.',
     'Developed role-based authentication, workflow routing, task queues, document management, approval tracking, operational dashboards, CSV reporting, and automated activity logs.',
-    'Delivered a platform supporting 8 internal user roles, 9 core modules, 10 provisioning stages, 50 standardized task outcomes, and 11 database entities.'
-  ], tags:['Next.js','TypeScript','PostgreSQL','Supabase','Role-based access'] },
+    'Deployed the platform to a VPS using Kubernetes, supporting 8 internal user roles, 9 core modules, 10 provisioning stages, 50 standardized task outcomes, and 11 database entities.'
+  ], tags:['Next.js','TypeScript','PostgreSQL','Supabase','Kubernetes','VPS','Role-based access'] },
   { date:'Aug 2024 – Aug 2026', location:'Chicago, IL · On-site', role:'Community Desk Assistant', company:'Illinois Institute of Technology', bullets:[
     'Assisted students with questions, service requests, lockouts, and general residence hall support.',
     'Managed front desk operations for residential housing as the first point of contact for students, visitors, and staff.',
